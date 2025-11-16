@@ -10,7 +10,7 @@ namespace digitalAgency.Domain.Entities
         public string ImageUrl { get; set; }    
         public BlogStatus Status { get; set; }
         public Guid BlogCategoryId { get; set; }    
-        public BlogCategories BlogCategories { get; set; }
+        public BlogCategory BlogCategories { get; set; } ;    
         public ICollection<Tag> Tags { get; set; }  
     }
 }

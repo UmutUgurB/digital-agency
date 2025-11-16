@@ -10,4 +10,9 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\digitalAgency.Infrastructure\digitalAgency.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\digitalAgency.Persistence\digitalAgency.Persistence.csproj" />
+  </ItemGroup>
+
 </Project>

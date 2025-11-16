@@ -2,7 +2,7 @@
 
 namespace digitalAgency.Domain.Entities
 {
-    public class BlogCategories : BaseEntity
+    public class BlogCategory : BaseEntity
     {
         public string Title { get; set; }   
         public string Description { get; set; } 
