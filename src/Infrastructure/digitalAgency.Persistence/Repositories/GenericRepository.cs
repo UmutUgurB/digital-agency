@@ -21,7 +21,7 @@ namespace digitalAgency.Persistence.Repositories
             await _dbSet.AddAsync(entity, cancellationToken);
         }
 
-        public async Task<IList<T>> GetAllAsync(CancellationToken cancellationToken = default, bool tracking = false)
+        public async Task<IList<T>> GetAllAsync(bool tracking = false,CancellationToken cancellationToken = default)
         {
             IQueryable<T> query = _dbSet;
             if(!tracking)
@@ -29,7 +29,7 @@ namespace digitalAgency.Persistence.Repositories
             return await query.ToListAsync(cancellationToken);
         }
 
-        public async Task<T?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default, bool tracking = false)
+        public async Task<T?> GetByIdAsync(Guid id, bool tracking = false, CancellationToken cancellationToken = default)
         {
             IQueryable<T> query = _dbSet;
             if(!tracking)

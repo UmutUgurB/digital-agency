@@ -1,7 +1,8 @@
-﻿namespace digitalAgency.Application.Features.Slider.Commands
+﻿namespace digitalAgency.Application.Dtos.Sliders
 {
-    public class CreateSliderCommand
+    public class SliderVm
     {
+        public Guid Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Button { get; set; }

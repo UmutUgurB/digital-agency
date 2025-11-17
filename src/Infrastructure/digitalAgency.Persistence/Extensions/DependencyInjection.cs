@@ -1,4 +1,6 @@
-﻿using digitalAgency.Persistence.Contexts;
+﻿using digitalAgency.Application.Repositories;
+using digitalAgency.Persistence.Contexts;
+using digitalAgency.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +13,8 @@ namespace digitalAgency.Persistence.Extensions
         {
             services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(config.GetConnectionString("SqlCon")));
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<ISliderRepository, SliderRepository>();
             return services;    
         }
     }
