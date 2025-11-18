@@ -1,7 +1,7 @@
 ﻿using digitalAgency.Application.Dtos.Sliders;
 using MediatR;
 
-namespace digitalAgency.Application.Features.Slider.Queries.GetSliderById
+namespace digitalAgency.Application.Features.Sliders.Queries.GetSliderById
 {
     public class GetSliderByIdQuery : IRequest<SliderVm>
     {

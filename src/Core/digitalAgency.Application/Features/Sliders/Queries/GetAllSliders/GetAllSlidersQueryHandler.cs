@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
 using digitalAgency.Application.Dtos.Sliders;
+using digitalAgency.Application.Features.Sliders.Queries.GetAllSliders;
 using digitalAgency.Application.Repositories;
 using MediatR;
 
-namespace digitalAgency.Application.Features.Slider.Queries.GetAllSliders
+namespace digitalAgency.Application.Features.Slidesr.Queries.GetAllSliders
 {
     public class GetAllSlidersQueryHandler : IRequestHandler<GetAllSlidersQuery, IList<SliderVm>>
     {

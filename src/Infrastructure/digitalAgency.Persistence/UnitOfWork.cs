@@ -13,8 +13,6 @@ namespace digitalAgency.Persistence
         }
 
         public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-        {
-            throw new NotImplementedException();
-        }
+        => _appDbContext.SaveChangesAsync(cancellationToken);
     }
 }

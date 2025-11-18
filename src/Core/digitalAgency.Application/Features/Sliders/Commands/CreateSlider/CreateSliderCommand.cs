@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
 
-namespace digitalAgency.Application.Features.Slider.Commands.CreateSlider
+namespace digitalAgency.Application.Features.Sliders.Commands.CreateSlider
 {
-    internal class CreateSliderCommand
+    public class CreateSliderCommand : IRequest<Guid>
     {
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string Button { get; set; }
+        public bool IsShown { get; set; }
+        public string ImageUrl { get; set; }
     }
 }
