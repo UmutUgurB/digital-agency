@@ -11,15 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{167E8484-1995-4F99-8560-29B7F4F26E6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "digitalAgency.Domain", "src\Core\digitalAgency.Domain\digitalAgency.Domain.csproj", "{58F8FCD8-DD21-41B8-B25F-7926F7B91533}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "digitalAgency.Domain", "src\Core\digitalAgency.Domain\digitalAgency.Domain.csproj", "{58F8FCD8-DD21-41B8-B25F-7926F7B91533}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "digitalAgency.Application", "src\Core\digitalAgency.Application\digitalAgency.Application.csproj", "{3740A336-CC1D-46BB-B389-BB9704AFCE55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "digitalAgency.Application", "src\Core\digitalAgency.Application\digitalAgency.Application.csproj", "{3740A336-CC1D-46BB-B389-BB9704AFCE55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "digitalAgency.Infrastructure", "src\Infrastructure\digitalAgency.Infrastructure\digitalAgency.Infrastructure.csproj", "{CB270966-DA7F-4BD6-AC97-9FEF6F7671F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "digitalAgency.Infrastructure", "src\Infrastructure\digitalAgency.Infrastructure\digitalAgency.Infrastructure.csproj", "{CB270966-DA7F-4BD6-AC97-9FEF6F7671F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "digitalAgency.Persistence", "src\Infrastructure\digitalAgency.Persistence\digitalAgency.Persistence.csproj", "{A9681AE0-29D5-4836-8640-074DBF6B6D49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "digitalAgency.Persistence", "src\Infrastructure\digitalAgency.Persistence\digitalAgency.Persistence.csproj", "{A9681AE0-29D5-4836-8640-074DBF6B6D49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "digitalAgency.WebApi", "src\Presentation\digitalAgency.WebApi\digitalAgency.WebApi.csproj", "{89CE51D8-A602-4982-98D7-C99FEB3E4DC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "digitalAgency.WebApi", "src\Presentation\digitalAgency.WebApi\digitalAgency.WebApi.csproj", "{89CE51D8-A602-4982-98D7-C99FEB3E4DC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

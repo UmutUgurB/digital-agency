@@ -1,9 +1,10 @@
 ﻿using MediatR;
 
-namespace digitalAgency.Application.Features.Comments.Commands.CreateComment
+namespace digitalAgency.Application.Features.Comments.Commands.UpdateComment
 {
-    public class CreateCommentCommand : IRequest<Guid>
+    public class UpdateCommentCommand : IRequest
     {
+        public Guid Id { get; set; }
         public string Subject { get; set; }
         public string Content { get; set; }
         public bool IsShown { get; set; }
