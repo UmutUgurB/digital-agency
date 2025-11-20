@@ -5,5 +5,6 @@ namespace digitalAgency.Application.Features.Services.Queries.GetServiceById
 {
     public class GetServiceByIdQuery : IRequest<ServicesVm>
     { 
+        public Guid Id { get; set; }    
     }
 }
