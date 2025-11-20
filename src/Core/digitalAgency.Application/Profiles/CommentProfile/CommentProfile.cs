@@ -2,6 +2,7 @@
 using digitalAgency.Application.Dtos.Comments;
 using digitalAgency.Application.Features.Comments.Commands.CreateComment;
 using digitalAgency.Application.Features.Comments.Commands.DeleteComment;
+using digitalAgency.Application.Features.Comments.Commands.UpdateComment;
 using digitalAgency.Domain.Entities;
 using System.Security.Cryptography.X509Certificates;
 

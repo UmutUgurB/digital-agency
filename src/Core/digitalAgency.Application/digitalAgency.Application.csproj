@@ -17,4 +17,9 @@
     <ProjectReference Include="..\digitalAgency.Domain\digitalAgency.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Infos\Queries\GetAllInfos\" />
+    <Folder Include="Features\Infos\Queries\GetInfoById\" />
+  </ItemGroup>
+
 </Project>

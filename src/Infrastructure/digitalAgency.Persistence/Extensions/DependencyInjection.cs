@@ -19,6 +19,8 @@ namespace digitalAgency.Persistence.Extensions
             services.AddScoped<IAboutRepository, AboutRepository>();    
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ICommentRepository, CommentRepository>();    
+            services.AddScoped<IContactRepository, ContactRepository>();    
+            services.AddScoped<IInfoRepository, InfoRepository>();    
             return services;    
         }
     }
