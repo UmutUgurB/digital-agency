@@ -115,6 +115,9 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddPersistenceExtensions(builder.Configuration);
 builder.Services.AddApplicationExtensions();
 builder.Services.AddInfrastructureServices();
+
+// HttpContextAccessor for CurrentUserService (must be registered in WebApi)
+builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
