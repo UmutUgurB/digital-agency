@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\digitalAgency.Application\digitalAgency.Application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\digitalAgency.Infrastructure\digitalAgency.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\digitalAgency.Persistence\digitalAgency.Persistence.csproj" />
   </ItemGroup>

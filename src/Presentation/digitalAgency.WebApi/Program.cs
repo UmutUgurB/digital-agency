@@ -6,9 +6,9 @@ using digitalAgency.Application.Settings;
 using digitalAgency.WebApi.Middlewares;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
 using System.Text;
 using Serilog;
+using Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -74,43 +74,7 @@ builder.Services.AddAuthorization();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-
-// Swagger with JWT Authorization
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo 
-    { 
-        Title = "Digital Agency API", 
-        Version = "v1",
-        Description = "Digital Agency Web API with JWT Authentication"
-    });
-
-    // JWT Authorization için Swagger UI'da token girilmesini sağlar
-    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-    {
-        Name = "Authorization",
-        Type = SecuritySchemeType.Http,
-        Scheme = "Bearer",
-        BearerFormat = "JWT",
-        In = ParameterLocation.Header,
-        Description = "JWT Authorization header using the Bearer scheme. Enter 'Bearer' [space] and then your token."
-    });
-
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
-            },
-            Array.Empty<string>()
-        }
-    });
-});
+builder.Services.AddSwaggerGen(); // Basit Swagger - JWT test için Postman kullanabilirsiniz
 
 builder.Services.AddPersistenceExtensions(builder.Configuration);
 builder.Services.AddApplicationExtensions();

@@ -1,4 +1,5 @@
 using digitalAgency.Domain.Entities;
+using digitalAgency.Persistence.Configurations.SeedData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -40,6 +41,9 @@ namespace digitalAgency.Persistence.Configurations
                 .WithOne(ur => ur.User)
                 .HasForeignKey(ur => ur.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            // Seed Data
+            builder.HasData(UserSeedData.GetUsers());
         }
     }
 }

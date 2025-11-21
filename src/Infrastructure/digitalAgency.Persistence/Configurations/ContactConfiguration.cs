@@ -8,9 +8,21 @@ namespace digitalAgency.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Contact> builder)
         {
-            builder.Property(x=>x.Subject).IsRequired().HasMaxLength(200);
-            builder.Property(x => x.Phone).IsRequired();
-            builder.Property(x=>x.Message).IsRequired().HasMaxLength(1000);
+            builder.ToTable("Contacts");
+
+            builder.Property(c => c.Name)
+                .IsRequired()
+                .HasMaxLength(100);
+
+            builder.Property(c => c.Email)
+                .IsRequired()
+                .HasMaxLength(100);
+
+            builder.Property(c => c.Message)
+                .IsRequired()
+                .HasMaxLength(1000);
+
+            // No seed data for contacts - user generated
         }
     }
 }

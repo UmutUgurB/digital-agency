@@ -1,6 +1,7 @@
 ﻿using digitalAgency.Domain.Common;
 using digitalAgency.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace digitalAgency.Persistence.Contexts
 {
@@ -84,6 +85,3 @@ namespace digitalAgency.Persistence.Contexts
         }
     }
 }
-
-// Expression kullanmak için gerekli namespace
-namespace System.Linq.Expressions { }
