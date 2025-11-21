@@ -1,0 +1,12 @@
+using MediatR;
+
+namespace digitalAgency.Application.Features.Tags.Commands.UpdateTag
+{
+    public class UpdateTagCommand : IRequest
+    {
+        public Guid Id { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+    }
+}
+

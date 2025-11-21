@@ -11,6 +11,6 @@ namespace digitalAgency.Domain.Entities
         public BlogStatus Status { get; set; }
         public Guid BlogCategoryId { get; set; }    
         public BlogCategory BlogCategories { get; set; } 
-        public ICollection<Tag> Tags { get; set; }  
+        public ICollection<Tag> Tags { get; set; } = new List<Tag>();
     }
 }

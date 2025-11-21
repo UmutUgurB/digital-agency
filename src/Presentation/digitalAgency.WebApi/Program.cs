@@ -1,8 +1,26 @@
 
 using digitalAgency.Persistence.Extensions;
 using digitalAgency.Application.Extensions;
+using digitalAgency.WebApi.Middlewares;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Serilog Configuration
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .WriteTo.File(
+        path: "Logs/log-.txt",
+        rollingInterval: RollingInterval.Day,
+        outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}"
+    )
+    .CreateLogger();
+
+builder.Host.UseSerilog();
+
+Log.Information("🚀 Digital Agency API Starting up...");
 
 // Add services to the container.
 builder.Services.AddCors(options =>
@@ -32,10 +50,28 @@ if (app.Environment.IsDevelopment())
 }
 // Configure the HTTP request pipeline.
 
+// Global Exception Handling Middleware (EN ÜSTTE OLMALI!)
+app.UseExceptionHandlingMiddleware();
+
 app.UseHttpsRedirection();
 app.UseCors("AllowFrontend");
 app.UseAuthorization();
 
+// Request logging
+app.UseSerilogRequestLogging();
+
 app.MapControllers();
 
-app.Run();
+try
+{
+    Log.Information("✅ Digital Agency API started successfully");
+    app.Run();
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "❌ Application startup failed");
+}
+finally
+{
+    Log.CloseAndFlush();
+}

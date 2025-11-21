@@ -23,7 +23,10 @@ namespace digitalAgency.Persistence.Extensions
             services.AddScoped<IInfoRepository, InfoRepository>();    
             services.AddScoped<IReferenceRepository, ReferenceRepository>();    
             services.AddScoped<IServiceRepository, ServiceRepository>();    
-            services.AddScoped<ISocialMediaRepository, SocialMediaRepository>();    
+            services.AddScoped<ISocialMediaRepository, SocialMediaRepository>();
+            services.AddScoped<IBlogRepository, BlogRepository>();
+            services.AddScoped<IBlogCategoryRepository, BlogCategoryRepository>();
+            services.AddScoped<ITagRepository, TagRepository>();    
             return services;    
         }
     }
