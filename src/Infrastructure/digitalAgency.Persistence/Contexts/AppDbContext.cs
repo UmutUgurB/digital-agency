@@ -21,6 +21,11 @@ namespace digitalAgency.Persistence.Contexts
         public DbSet<BlogCategory> BlogCategories { get; set; }  
         public DbSet<Tag> Tags { get; set; }  
         public DbSet<About> Abouts { get; set; }
+        
+        // Authentication
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -51,8 +56,8 @@ namespace digitalAgency.Persistence.Contexts
 
             foreach (var entry in entries)
             {
-                // TODO: Authentication eklendiğinde buradan current user bilgisi alınacak
-                var currentUser = "System"; // Şimdilik default
+                // TODO: ICurrentUserService inject edilip kullanılacak
+                var currentUser = "System"; // Şimdilik default (ICurrentUserService eklendiğinde güncellenecek)
 
                 switch (entry.State)
                 {

@@ -12,16 +12,16 @@ namespace digitalAgency.Application.Extensions
         {
             var assembly = Assembly.GetExecutingAssembly();
 
-            // MediatR
+
             services.AddMediatR(assembly);
 
-            // AutoMapper
+
             services.AddAutoMapper(assembly);
 
-            // FluentValidation - Tüm validator'ları otomatik register et
+
             services.AddValidatorsFromAssembly(assembly);
 
-            // MediatR Pipeline Behaviors
+
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
             return services;    

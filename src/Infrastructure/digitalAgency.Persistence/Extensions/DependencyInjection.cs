@@ -26,7 +26,12 @@ namespace digitalAgency.Persistence.Extensions
             services.AddScoped<ISocialMediaRepository, SocialMediaRepository>();
             services.AddScoped<IBlogRepository, BlogRepository>();
             services.AddScoped<IBlogCategoryRepository, BlogCategoryRepository>();
-            services.AddScoped<ITagRepository, TagRepository>();    
+            services.AddScoped<ITagRepository, TagRepository>();
+            
+            // Authentication
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IRoleRepository, RoleRepository>();
+            
             return services;    
         }
     }

@@ -67,6 +67,20 @@ namespace digitalAgency.WebApi.Middlewares
                     response.Errors = new List<string> { unauthorizedException.Message };
                     break;
 
+                case AuthenticationException authenticationException:
+                    context.Response.StatusCode = authenticationException.StatusCode;
+                    response.StatusCode = authenticationException.StatusCode;
+                    response.Message = authenticationException.Message;
+                    response.Errors = new List<string> { authenticationException.Message };
+                    break;
+
+                case ForbiddenException forbiddenException:
+                    context.Response.StatusCode = forbiddenException.StatusCode;
+                    response.StatusCode = forbiddenException.StatusCode;
+                    response.Message = forbiddenException.Message;
+                    response.Errors = new List<string> { forbiddenException.Message };
+                    break;
+
                 case BaseException baseException:
                     context.Response.StatusCode = baseException.StatusCode;
                     response.StatusCode = baseException.StatusCode;

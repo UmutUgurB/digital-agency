@@ -1,9 +1,6 @@
 namespace digitalAgency.Application.Wrappers
 {
-    /// <summary>
-    /// Standart API Response formatı
-    /// Tüm endpoint'ler bu formatta response döndürür
-    /// </summary>
+
     public class Result
     {
         public bool Success { get; set; }
@@ -42,9 +39,6 @@ namespace digitalAgency.Application.Wrappers
         }
     }
 
-    /// <summary>
-    /// Data içeren response için generic version
-    /// </summary>
     public class Result<T> : Result
     {
         public T Data { get; set; }
@@ -87,4 +81,5 @@ namespace digitalAgency.Application.Wrappers
         }
     }
 }
+
 

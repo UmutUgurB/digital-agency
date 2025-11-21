@@ -1,9 +1,6 @@
 namespace digitalAgency.Application.Wrappers
 {
-    /// <summary>
-    /// Sayfalanmış data için response formatı
-    /// GetAll endpoint'lerinde kullanılır
-    /// </summary>
+
     public class PagedResult<T> : Result<T>
     {
         public int PageNumber { get; set; }
@@ -29,4 +26,5 @@ namespace digitalAgency.Application.Wrappers
         }
     }
 }
+
 

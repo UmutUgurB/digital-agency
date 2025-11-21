@@ -209,3 +209,4 @@ Website: `http://localhost:3001`
 **Hiçbir backend değişikliği yapılmadı. Sadece frontend'e API consume işlemleri eklendi.**
 
 
+

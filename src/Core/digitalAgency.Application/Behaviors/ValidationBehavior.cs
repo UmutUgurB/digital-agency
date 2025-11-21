@@ -4,11 +4,7 @@ using ValidationException = digitalAgency.Domain.Exceptions.ValidationException;
 
 namespace digitalAgency.Application.Behaviors
 {
-    /// <summary>
-    /// MediatR Pipeline Behavior
-    /// Her request için otomatik validation yapar
-    /// Request -> ValidationBehavior -> Handler -> Response
-    /// </summary>
+
     public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TRequest : IRequest<TResponse>
     {
@@ -21,13 +17,13 @@ namespace digitalAgency.Application.Behaviors
 
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {
-            // Eğer validator yoksa direkt devam et
+
             if (!_validators.Any())
             {
                 return await next();
             }
 
-            // Validation context oluştur
+
             var context = new ValidationContext<TRequest>(request);
 
             // Tüm validator'ları çalıştır
@@ -35,13 +31,13 @@ namespace digitalAgency.Application.Behaviors
                 _validators.Select(v => v.ValidateAsync(context, cancellationToken))
             );
 
-            // Hataları topla
+
             var failures = validationResults
                 .Where(r => !r.IsValid)
                 .SelectMany(r => r.Errors)
                 .ToList();
 
-            // Eğer hata varsa ValidationException fırlat
+
             if (failures.Any())
             {
                 var errors = failures
@@ -54,9 +50,10 @@ namespace digitalAgency.Application.Behaviors
                 throw new ValidationException(errors);
             }
 
-            // Validation başarılı, handler'a devam et
+
             return await next();
         }
     }
 }
+
 
