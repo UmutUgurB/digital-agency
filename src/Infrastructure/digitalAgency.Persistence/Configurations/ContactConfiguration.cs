@@ -10,13 +10,17 @@ namespace digitalAgency.Persistence.Configurations
         {
             builder.ToTable("Contacts");
 
-            builder.Property(c => c.Name)
-                .IsRequired()
-                .HasMaxLength(100);
-
             builder.Property(c => c.Email)
                 .IsRequired()
                 .HasMaxLength(100);
+
+            builder.Property(c => c.Phone)
+                .IsRequired()
+                .HasMaxLength(20);
+
+            builder.Property(c => c.Subject)
+                .IsRequired()
+                .HasMaxLength(200);
 
             builder.Property(c => c.Message)
                 .IsRequired()

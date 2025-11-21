@@ -16,6 +16,11 @@ namespace digitalAgency.Persistence.Configurations
                 .HasMaxLength(200);
 
             builder.Property(r => r.Description)
+                .IsRequired()
+                .HasMaxLength(500);
+
+            builder.Property(r => r.IconUrl)
+                .IsRequired()
                 .HasMaxLength(500);
 
             // Seed Data
@@ -23,4 +28,3 @@ namespace digitalAgency.Persistence.Configurations
         }
     }
 }
-

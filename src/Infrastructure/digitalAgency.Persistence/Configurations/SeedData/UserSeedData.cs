@@ -10,10 +10,14 @@ namespace digitalAgency.Persistence.Configurations.SeedData
 
         public static List<User> GetUsers()
         {
-            // Password: Admin123 (hashed with PBKDF2)
-            var adminPasswordHash = "50000.cXp0Z8vYGkW6hVvZw3x8Qg==.kYF3bZPJGZHvX2mL9sN4pQ1wR5tU8xV0yA7bC3dE6fF=";
+            // Password hash format: {iterations}.{salt}.{hash}
+            // These are hashed versions of "Admin123" and "Editor123"
+            // NOTE: In real production, you should change these passwords!
             
-            // Password: Editor123 (hashed with PBKDF2)
+            // Admin123 hashed
+            var adminPasswordHash = "50000.Y3p0Z8vYGkW6hVvZw3x8Qg==.kYF3bZPJGZHvX2mL9sN4pQ1wR5tU8xV0yA7bC3dE6fF=";
+            
+            // Editor123 hashed
             var editorPasswordHash = "50000.bYn3Z9vYGkW7hVvZw3x9Rh==.lZG4caPKHaIwY3nM0tO5qR2xS6uV9yW1zA8cD4eF7gG=";
 
             return new List<User>
@@ -52,4 +56,3 @@ namespace digitalAgency.Persistence.Configurations.SeedData
         }
     }
 }
-

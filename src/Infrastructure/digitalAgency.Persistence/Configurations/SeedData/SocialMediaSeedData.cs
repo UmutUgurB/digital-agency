@@ -10,50 +10,55 @@ namespace digitalAgency.Persistence.Configurations.SeedData
             {
                 new SocialMedia
                 {
-                    Id = Guid.Parse("SOC00001-0001-0001-0001-000000000001"),
+                    Id = Guid.Parse("A0C00001-0001-0001-0001-000000000001"),
                     Title = "Facebook",
                     Url = "https://facebook.com/digitalagency",
-                    Icon = "fab fa-facebook",
+                    SocialMediaIcon = "fab fa-facebook",
+                    IsShown = true,
                     CreatedDate = DateTime.UtcNow.AddMonths(-6),
                     CreatedBy = "System",
                     IsDeleted = false
                 },
                 new SocialMedia
                 {
-                    Id = Guid.Parse("SOC00001-0001-0001-0001-000000000002"),
+                    Id = Guid.Parse("A0C00001-0001-0001-0001-000000000002"),
                     Title = "Instagram",
                     Url = "https://instagram.com/digitalagency",
-                    Icon = "fab fa-instagram",
+                    SocialMediaIcon = "fab fa-instagram",
+                    IsShown = true,
                     CreatedDate = DateTime.UtcNow.AddMonths(-6),
                     CreatedBy = "System",
                     IsDeleted = false
                 },
                 new SocialMedia
                 {
-                    Id = Guid.Parse("SOC00001-0001-0001-0001-000000000003"),
+                    Id = Guid.Parse("A0C00001-0001-0001-0001-000000000003"),
                     Title = "Twitter",
                     Url = "https://twitter.com/digitalagency",
-                    Icon = "fab fa-twitter",
+                    SocialMediaIcon = "fab fa-twitter",
+                    IsShown = true,
                     CreatedDate = DateTime.UtcNow.AddMonths(-6),
                     CreatedBy = "System",
                     IsDeleted = false
                 },
                 new SocialMedia
                 {
-                    Id = Guid.Parse("SOC00001-0001-0001-0001-000000000004"),
+                    Id = Guid.Parse("A0C00001-0001-0001-0001-000000000004"),
                     Title = "LinkedIn",
                     Url = "https://linkedin.com/company/digitalagency",
-                    Icon = "fab fa-linkedin",
+                    SocialMediaIcon = "fab fa-linkedin",
+                    IsShown = true,
                     CreatedDate = DateTime.UtcNow.AddMonths(-6),
                     CreatedBy = "System",
                     IsDeleted = false
                 },
                 new SocialMedia
                 {
-                    Id = Guid.Parse("SOC00001-0001-0001-0001-000000000005"),
+                    Id = Guid.Parse("A0C00001-0001-0001-0001-000000000005"),
                     Title = "YouTube",
                     Url = "https://youtube.com/@digitalagency",
-                    Icon = "fab fa-youtube",
+                    SocialMediaIcon = "fab fa-youtube",
+                    IsShown = true,
                     CreatedDate = DateTime.UtcNow.AddMonths(-6),
                     CreatedBy = "System",
                     IsDeleted = false

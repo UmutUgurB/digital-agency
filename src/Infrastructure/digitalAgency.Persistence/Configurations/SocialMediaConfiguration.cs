@@ -19,9 +19,12 @@ namespace digitalAgency.Persistence.Configurations
                 .IsRequired()
                 .HasMaxLength(500);
 
+            builder.Property(sm => sm.SocialMediaIcon)
+                .IsRequired()
+                .HasMaxLength(100);
+
             // Seed Data
             builder.HasData(SocialMediaSeedData.GetSocialMedias());
         }
     }
 }
-

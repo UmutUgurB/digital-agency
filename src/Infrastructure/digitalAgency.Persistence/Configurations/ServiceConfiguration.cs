@@ -16,11 +16,15 @@ namespace digitalAgency.Persistence.Configurations
                 .HasMaxLength(200);
 
             builder.Property(s => s.Description)
+                .IsRequired()
                 .HasMaxLength(1000);
+
+            builder.Property(s => s.ImageUrl)
+                .IsRequired()
+                .HasMaxLength(500);
 
             // Seed Data
             builder.HasData(ServiceSeedData.GetServices());
         }
     }
 }
-

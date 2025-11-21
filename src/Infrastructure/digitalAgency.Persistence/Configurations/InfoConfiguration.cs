@@ -15,11 +15,11 @@ namespace digitalAgency.Persistence.Configurations
                 .IsRequired()
                 .HasMaxLength(500);
 
-            builder.Property(i => i.Phone)
+            builder.Property(i => i.PhoneNumber)
                 .IsRequired()
                 .HasMaxLength(20);
 
-            builder.Property(i => i.Email)
+            builder.Property(i => i.Mail)
                 .IsRequired()
                 .HasMaxLength(100);
 
@@ -28,4 +28,3 @@ namespace digitalAgency.Persistence.Configurations
         }
     }
 }
-

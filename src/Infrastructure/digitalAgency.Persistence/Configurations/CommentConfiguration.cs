@@ -10,9 +10,9 @@ namespace digitalAgency.Persistence.Configurations
         {
             builder.ToTable("Comments");
 
-            builder.Property(c => c.Name)
+            builder.Property(c => c.Subject)
                 .IsRequired()
-                .HasMaxLength(100);
+                .HasMaxLength(200);
 
             builder.Property(c => c.Content)
                 .IsRequired()

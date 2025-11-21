@@ -47,18 +47,15 @@ namespace digitalAgency.Persistence.Contexts
             }
         }
 
-        /// <summary>
-        /// SaveChanges override - Audit fields'i otomatik doldur
-        /// </summary>
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            // ChangeTracker'dan değişen entity'leri al
+
             var entries = ChangeTracker.Entries<BaseEntity>();
 
             foreach (var entry in entries)
             {
-                // TODO: ICurrentUserService inject edilip kullanılacak
-                var currentUser = "System"; // Şimdilik default (ICurrentUserService eklendiğinde güncellenecek)
+
+                var currentUser = "System"; 
 
                 switch (entry.State)
                 {
@@ -74,7 +71,7 @@ namespace digitalAgency.Persistence.Contexts
                         break;
 
                     case EntityState.Deleted:
-                        // Hard delete yerine soft delete yap
+
                         entry.State = EntityState.Modified;
                         entry.Entity.SoftDelete(currentUser);
                         break;
